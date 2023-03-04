@@ -71,7 +71,6 @@ contract MyToken is IERC20 {
     }
 
     function mint(uint256 token) public returns(bool success) {
-        //mirequire(msg.sender==address(this));
         _balances[msg.sender] +=  token * 10 ** uint256(decimals);
         _totalSupply +=  token * 10 ** uint256(decimals);
         emit Transfer(address(0), msg.sender, token * 10 ** uint256(decimals));
